@@ -4,5 +4,6 @@
 4. run executalbe : go run app
 
 TODO:
-1. solution to local path for c ccwrapper
-2. define go_did_recv_message define in main: make a cwrapper and then pass off?
+1. solution to local path for c includes and lib
+2. to introduce user data object which can be interacted with in the callback
+3. better way to pass what the callback struct
