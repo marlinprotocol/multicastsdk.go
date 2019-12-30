@@ -1,4 +1,5 @@
 package mapstore
+
 import (
 	"sync"
 	"unsafe"
@@ -9,8 +10,8 @@ var (
 	store = map[unsafe.Pointer]interface{}{}
 )
 
-func Save(key unsafe.Pointer,v interface{}) bool {
-	if (key == nil || v == nil) {
+func Save(key unsafe.Pointer, v interface{}) bool {
+	if key == nil || v == nil {
 		return false
 	}
 
