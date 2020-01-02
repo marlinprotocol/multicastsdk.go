@@ -8,7 +8,7 @@ package multicastsdk
 #cgo LDFLAGS: ./internal/csdk/libmarlin-net.a
 #cgo LDFLAGS: ./internal/csdk/libsodium.a
 #cgo LDFLAGS: ./internal/csdk/libuv_a.a
-#cgo LDFLAGS: -lstdc++ -lm
+#cgo LDFLAGS: -lstdc++ -lm -static
 
 extern void did_recv_message_cgo (
 	MarlinMulticastClient_t* client,
@@ -42,9 +42,9 @@ type ClientDelegate interface {
 }
 
 type Client struct {
-	cClient *C.MarlinMulticastClient_t
+	cClient         *C.MarlinMulticastClient_t
 	cClientDelegate *C.MarlinMulticastClientDelegate_t
-	delegate ClientDelegate
+	delegate        ClientDelegate
 }
 
 func NewClient(
